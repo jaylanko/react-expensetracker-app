@@ -1,6 +1,4 @@
-
-import Card from "./components/Card";
-import Expenses from "./components/Expenses";
+import Expenses from "./components/Expenses/Expenses";
 
 function App() {
   const expense = [
@@ -32,9 +30,7 @@ function App() {
   return (
     <div>
       <h2>Let's get started right now!</h2>
-          <Card className="expenses">
-            <Expenses expense={expense} />
-          </Card>
+      <Expenses expense={expense} />
     </div>
   );
 }
