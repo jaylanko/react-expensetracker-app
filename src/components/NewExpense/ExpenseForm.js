@@ -3,7 +3,7 @@ import "./ExpenseForm.css";
 import React, { useState } from "react";
 
 const ExpenseForm = (props) => {
-  const [enteredNumber, setEnteredNumber] = useState("");
+  const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
 
@@ -27,7 +27,7 @@ const ExpenseForm = (props) => {
   };
 
   const numberChangeHandler = (event) => {
-    setEnteredNumber(event.target.value);
+    setEnteredAmount(event.target.value);
 
     // setUserInput({
     //   ...userInput,
@@ -59,12 +59,12 @@ const submitHandler = (event) => {
 
         const expenseData ={
             title: enteredTitle,
-            number: enteredNumber,
+            amount: enteredAmount,
             date: new Date(enteredDate)
         };
         props.onSaveExpenseData(expenseData);
         setEnteredTitle('');
-        setEnteredNumber('');
+        setEnteredAmount('');
         setEnteredDate('');
 
 }
@@ -81,7 +81,7 @@ const submitHandler = (event) => {
             type="number"
             min="0.01"
             step="0.01"
-            value= {enteredNumber}
+            value= {enteredAmount}
             onChange={numberChangeHandler}
           />
         </div>
